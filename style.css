@@ -1,3 +1,8 @@
+* {
+    font-family: Arial, sans-serif;
+
+} 
+
 html, body {
     margin: 0;
     padding: 0;
@@ -37,16 +42,17 @@ html, body {
 }
 #lewa {
 width: 15%;
-min-height:150px;
+min-height:500px;
 height: auto;
-background-color: cornflowerblue;
+background-color: rgb(100, 149, 237);
 float: left;
 }
 #main {
 width: 85%;
 min-height: 150px;
-height: auto;
 float: right;
+height: 100vh; 
+overflow-y: auto; 
 }
 #footer {
 width: 100%;
@@ -55,3 +61,14 @@ background-color: cornflowerblue;
 float: right;
 }
 
+#lewa a {
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+#lewa a:hover {
+    background-color:  rgb(74, 130, 233);
+}
