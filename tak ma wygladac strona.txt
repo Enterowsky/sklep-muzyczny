@@ -9,8 +9,9 @@
 </head>
 <body>
 <div id="góra">
-<img src="logo.png" a="main.html" id="obrazeklogo">
-    <div id="logo">SKLEP MUZYCZNY</div>
+    <a href="main.html"><div id="logo">
+   <img src="logo.png" alt="logo" id="obrazeklogo"></a>
+        <p>SKLEP MUZYCZNY</p></div>
     <div id="reklama">NOWY ALBUM</div>
     <div id="koszyk"> ZDJĘCIE KOSZYKA</div>
 </div>

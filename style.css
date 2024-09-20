@@ -72,3 +72,11 @@ float: right;
 #lewa a:hover {
     background-color:  rgb(74, 130, 233);
 }
+#góra img {
+float: left;
+}
+#góra p {
+    text-align: center;
+    padding-top: 30px;
+    font-size: 30px;
+}
