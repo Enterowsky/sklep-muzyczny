@@ -13,7 +13,20 @@
    <img src="logo.png" alt="logo" id="obrazeklogo"></a>
         <p>SKLEP MUZYCZNY</p></div>
     <div id="reklama">NOWY ALBUM</div>
-    <div id="koszyk"> ZDJĘCIE KOSZYKA</div>
+    <div id="koszyk" onclick="pokazKoszyk()">
+        <img src="koszyk.png" alt="Koszyk">
+        <span id="liczba-produktow">0</span>
+    </div>
+    
+    <div id="panel-koszyka">
+        <div id="zawartosc-koszyka">
+            <h3>Koszyk</h3>
+            <ul id="lista-produktow"></ul>
+            <p id="suma">Suma: 0 PLN</p>
+            <button onclick="wyczyscKoszyk()">Wyczyść koszyk</button>
+        </div>
+    </div>
+    
 </div>
 <div id="środek">
     <div id="lewa">
@@ -30,5 +43,105 @@
 <div id="dół">
     <div id="footer">KTO ZROBIŁ</div>
 </div>
+<script>
+    // Inicjalizacja zmiennych
+    let koszyk = JSON.parse(localStorage.getItem('koszyk')) || [];
+    let suma = parseFloat(localStorage.getItem('suma')) || 0;
+
+    // Aktualizacja koszyka po załadowaniu strony
+    document.addEventListener('DOMContentLoaded', function () {
+        aktualizujKoszyk();
+        const buttons = document.querySelectorAll('.koszyk button');
+        buttons.forEach((button, index) => {
+            button.addEventListener('click', function () {
+                dodajDoKoszyka(index);
+            });
+        });
+    });
+
+    // Funkcja dodawania do koszyka
+    function dodajDoKoszyka(index) {
+        const produkty = [
+            { name: "Nowa Płyta", price: 99.99 },
+            { name: "Nowy Instrument", price: 1999.99 },
+            { name: "Nowy Winyl", price: 79.99 }
+        ];
+
+        const produkt = produkty[index];
+        koszyk.push(produkt);
+        suma += produkt.price;
+
+        // Zapisanie do LocalStorage
+        localStorage.setItem('koszyk', JSON.stringify(koszyk));
+        localStorage.setItem('suma', suma.toFixed(2));
+
+        // Aktualizacja wyświetlanych danych
+        aktualizujKoszyk();
+    }
+
+    // Funkcja aktualizacji koszyka
+    function aktualizujKoszyk() {
+        const liczbaProduktow = document.getElementById('liczba-produktow');
+        const listaProduktow = document.getElementById('lista-produktow');
+        const sumaElement = document.getElementById('suma');
+
+        // Aktualizacja liczby produktów
+        liczbaProduktow.innerText = koszyk.length;
+
+        // Wyczyszczenie listy produktów
+        listaProduktow.innerHTML = '';
+
+        // Dodanie produktów do listy
+        koszyk.forEach((produkt, index) => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                ${produkt.name} - ${produkt.price.toFixed(2)} PLN
+                <button class="usun-btn" onclick="usunZKoszyka(${index})">Usuń</button>
+            `;
+            listaProduktow.appendChild(li);
+        });
+
+        // Aktualizacja sumy
+        sumaElement.innerText = `Suma: ${suma.toFixed(2)} PLN`;
+    }
+
+    // Funkcja usuwania produktu z koszyka
+    function usunZKoszyka(index) {
+        const produkt = koszyk[index];
+        suma -= produkt.price;
+        koszyk.splice(index, 1);
+
+        // Zapisanie zaktualizowanego koszyka i sumy do LocalStorage
+        localStorage.setItem('koszyk', JSON.stringify(koszyk));
+        localStorage.setItem('suma', suma.toFixed(2));
+
+        // Aktualizacja wyświetlanych danych
+        aktualizujKoszyk();
+    }
+
+    // Funkcja wyczyszczenia koszyka
+    function wyczyscKoszyk() {
+        koszyk = [];
+        suma = 0;
+
+        // Usunięcie danych z LocalStorage
+        localStorage.removeItem('koszyk');
+        localStorage.removeItem('suma');
+
+        // Aktualizacja wyświetlanych danych
+        aktualizujKoszyk();
+    }
+
+    // Funkcja wysuwania i chowania koszyka
+    function pokazKoszyk() {
+        const panelKoszyka = document.getElementById('panel-koszyka');
+        if (panelKoszyka.classList.contains('open')) {
+            panelKoszyka.classList.remove('open');
+        } else {
+            panelKoszyka.classList.add('open');
+        }
+    }
+</script>
+
 </body>
 </html>
