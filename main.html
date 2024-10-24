@@ -43,14 +43,14 @@
         <div id="środkowy-content">
         <div id="najbardziej-sprzedawany">
             <h2>Najbardziej sprzedawany instrument</h2>
-            <img src="instrument.png" alt="Najbardziej sprzedawany instrument" id="najbardziej-img">
+            <a href="gitary.html"><img src="instrument.png" alt="Najbardziej sprzedawany instrument" id="najbardziej-img" style="width: auto; height: auto;"></a>
         </div>
         <div id="produkty">
             <div class="produkt">
                 <h3>Nowa Płyta</h3>
-                <img src="nowa_plyta.png" alt="Nowa Płyta">
+                <img src="nowa_plyta.png" alt="Nowa Płyta" style="width: 350px; height: 350px;">
                 <div class="cena">
-                    <p>Cena: 99.99 PLN</p>
+                    <p>Cena: 19.99 PLN</p>
                     <div class="koszyk">
                         <button>Dodaj do koszyka</button>
                     </div>
@@ -58,7 +58,7 @@
             </div>
             <div class="produkt">
                 <h3>Nowy Instrument</h3>
-                <img src="nowy_instrument.png" alt="Nowy Instrument">
+                <img src="nowy_instrument.png" alt="Nowy Instrument" style="width: 350px; height: 350px;">
                 <div class="cena">
                     <p>Cena: 1999.99 PLN</p>
                     <div class="koszyk">
@@ -68,9 +68,9 @@
             </div>
             <div class="produkt">
                 <h3>Nowy Winyl</h3>
-                <img src="nowy_winyl.png" alt="Nowy Winyl">
+                <img src="nowy_vinyl.png" alt="Nowy Winyl" style="width: 350px; height: 350px;">
                 <div class="cena">
-                    <p>Cena: 79.99 PLN</p>
+                    <p>Cena: 149.99 PLN</p>
                     <div class="koszyk">
                         <button>Dodaj do koszyka</button>
                     </div>
@@ -102,9 +102,9 @@
     // Funkcja dodawania do koszyka
     function dodajDoKoszyka(index) {
         const produkty = [
-            { name: "Nowa Płyta", price: 99.99 },
+            { name: "Nowa Płyta", price: 19.99 },
             { name: "Nowy Instrument", price: 1999.99 },
-            { name: "Nowy Winyl", price: 79.99 }
+            { name: "Nowy Winyl", price: 149.99 }
         ];
 
         const produkt = produkty[index];
