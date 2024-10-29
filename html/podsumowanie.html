@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podsumowanie Zamówienia</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div id="podsumowanie-koszyka">
+        <h2>Podsumowanie Zamówienia</h2>
+        
+        <!-- Formularz danych klienta -->
+        <form action="zapisz_zamowienie.php" method="POST">
+            <label for="imie">Imię i nazwisko:</label>
+            <input type="text" id="imie" name="imie" required><br>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="telefon">Numer telefonu:</label>
+            <input type="tel" id="telefon" name="telefon" required><br>
+
+            <label for="adres">Adres dostawy:</label>
+            <textarea id="adres" name="adres" rows="3" required></textarea>
+
+            <!-- Dane koszyka przesyłane jako ukryte pola -->
+            <input type="hidden" name="produkty" id="produkty-json">
+
+            <button type="submit">Finalizuj zamówienie</button>
+        </form>
+        <a href="../main.html" id="powrot-do-sklepu">Powrót do sklepu</a>
+    </div>
+
+
+    <script>
+        // Pobranie danych koszyka z LocalStorage i wstawienie ich do ukrytego pola
+        const koszyk = JSON.parse(localStorage.getItem("koszyk")) || [];
+        document.getElementById("produkty-json").value = JSON.stringify(koszyk);
+    </script>
+</body>
+</html>

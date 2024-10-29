@@ -211,3 +211,77 @@ float: left;
 #zamknij-koszyk:hover {
     color: red; /* Opcjonalne: zmiana koloru po najechaniu kursorem */
 }
+#liczba-produktow {
+    position: absolute;
+    top: 10px;  /* Ustal, by dostosować pozycję względem ikony koszyka */
+    right: 10px;
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 100%;
+    min-width: 15px;
+    text-align: center;
+    line-height: 1;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+}
+#podsumowanie-koszyka {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+#podsumowanie-koszyka h2 {
+    text-align: center;
+}
+
+#tabela-produktow {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#tabela-produktow th, #tabela-produktow td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#calkowita-cena {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 20px;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: darkgreen;
+}
+
+#powrot-do-sklepu {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: blue;
+    text-decoration: none;
+}
+
+#powrot-do-sklepu:hover {
+    text-decoration: underline;
+}
