@@ -5,28 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STRONA GŁÓWNA - SKLEP MUZYCZNY</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <div id="góra">
-    <a href="main.html"><div id="logo">
-   <img src="logo.png" alt="logo" id="obrazeklogo"></a>
+    <a href="../main.html"><div id="logo">
+   <img src="../img/logo.png" alt="logo" id="obrazeklogo"></a>
         <p>SKLEP MUZYCZNY</p></div>
     <div id="reklama">NOWY ALBUM</div>
     <div id="koszyk" onclick="pokazKoszyk()">
-        <img src="koszyk.png" alt="Koszyk">
+        
+        <img src="../img/koszyk.png" alt="Koszyk">
         <span id="liczba-produktow">0</span>
     </div>
     
     <div id="panel-koszyka">
         <div id="zawartosc-koszyka">
+            <button id="zamknij-koszyk" onclick="pokazKoszyk()">X</button>
             <h3>Koszyk</h3>
             <ul id="lista-produktow"></ul>
             <p id="suma">Suma: 0 PLN</p>
             <button onclick="wyczyscKoszyk()">Wyczyść koszyk</button>
+            <a href="podsumowanie.html" class="zobacz-koszyk">Podsumowanie</a>
+
         </div>
     </div>
-    
 </div>
 <div id="środek">
     <div id="lewa">
@@ -38,10 +41,49 @@
         <a href="Winyle.html">Winyle</a>
         <a href="Plyty_cd.html">Płyty CD</a>
     </div>
-    <div id="main">RZECZY</div>
+    <div id="main">
+        <div id="środkowy-content">
+        <div id="najbardziej-sprzedawany">
+            <h2>Najbardziej sprzedawany instrument</h2>
+            <a href="html/gitary.html"><img src="img/instrument.png" alt="Najbardziej sprzedawany instrument" id="najbardziej-img" style="width: auto; height: auto;"></a>
+        </div>
+        <div id="produkty">
+            <div class="produkt">
+                <h3>Lady Gaga & Bruno Mars - Die with a smile CD</h3>
+                <img src="img/nowa_plyta.png" alt="Nowa Płyta" style="width: 350px; height: 320px; margin-top: 30px;">
+                <div class="cena">
+                    <p>Cena: 19.99 PLN</p>
+                    <div class="koszyk">
+                        <button>Dodaj do koszyka</button>
+                    </div>
+                </div>
+            </div>
+            <div class="produkt">
+                <h3>Gitara akustyczna - Dowina Rioja D</h3>
+                <img src="img/nowy_instrument.png" alt="Nowy Instrument" style="width: 350px; height: 350px;">
+                <div class="cena">
+                    <p>Cena: 1999.99 PLN</p>
+                    <div class="koszyk">
+                        <button>Dodaj do koszyka</button>
+                    </div>
+                </div>
+            </div>
+            <div class="produkt">
+                <h3>Billie Eilish - Hit Me Hard and Soft Vinyl</h3>
+                <img src="img/nowy_vinyl.png" alt="Nowy Winyl" style="width: 350px; height: 350px;">
+                <div class="cena">
+                    <p>Cena: 149.99 PLN</p>
+                    <div class="koszyk">
+                        <button>Dodaj do koszyka</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 <div id="dół">
-    <div id="footer">KTO ZROBIŁ</div>
+    <div id="footer"><p>Skontaktuj się z nami!</p></div>
 </div>
 <script>
     // Inicjalizacja zmiennych
@@ -62,9 +104,9 @@
     // Funkcja dodawania do koszyka
     function dodajDoKoszyka(index) {
         const produkty = [
-            { name: "Nowa Płyta", price: 99.99 },
-            { name: "Nowy Instrument", price: 1999.99 },
-            { name: "Nowy Winyl", price: 79.99 }
+            { name: "Lady Gaga & Bruno Mars - Die with a smile CD", price: 19.99 },
+            { name: "Gitara akustyczna - Dowina Rioja D", price: 1999.99 },
+            { name: "Billie Eilish - Hit Me Hard and Soft Vinyl", price: 149.99 }
         ];
 
         const produkt = produkty[index];
@@ -136,8 +178,14 @@
     function pokazKoszyk() {
         const panelKoszyka = document.getElementById('panel-koszyka');
         if (panelKoszyka.classList.contains('open')) {
+            // Jeżeli panel jest otwarty, chowamy go
             panelKoszyka.classList.remove('open');
+            setTimeout(() => {
+                panelKoszyka.style.visibility = 'hidden';
+            }, 300); // Czekamy na zakończenie animacji
         } else {
+            // Jeżeli panel jest zamknięty, pokazujemy go
+            panelKoszyka.style.visibility = 'visible';
             panelKoszyka.classList.add('open');
         }
     }

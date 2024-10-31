@@ -26,7 +26,7 @@
             <ul id="lista-produktow"></ul>
             <p id="suma">Suma: 0 PLN</p>
             <button onclick="wyczyscKoszyk()">Wyczyść koszyk</button>
-            <a href="html/podsumowanie.html" class="zobacz-koszyk">Zobacz koszyk</a>
+            <a href="html/podsumowanie.html" class="zobacz-koszyk">Podsumowanie</a>
 
         </div>
     </div>
@@ -49,7 +49,7 @@
         </div>
         <div id="produkty">
             <div class="produkt">
-                <h3>Nowa Płyta</h3>
+                <h3>Lady Gaga & Bruno Mars - Die with a smile CD</h3>
                 <img src="img/nowa_plyta.png" alt="Nowa Płyta" style="width: 350px; height: 320px; margin-top: 30px;">
                 <div class="cena">
                     <p>Cena: 19.99 PLN</p>
@@ -59,7 +59,7 @@
                 </div>
             </div>
             <div class="produkt">
-                <h3>Nowy Instrument</h3>
+                <h3>Gitara akustyczna - Dowina Rioja D</h3>
                 <img src="img/nowy_instrument.png" alt="Nowy Instrument" style="width: 350px; height: 350px;">
                 <div class="cena">
                     <p>Cena: 1999.99 PLN</p>
@@ -69,7 +69,7 @@
                 </div>
             </div>
             <div class="produkt">
-                <h3>Nowy Winyl</h3>
+                <h3>Billie Eilish - Hit Me Hard and Soft Vinyl</h3>
                 <img src="img/nowy_vinyl.png" alt="Nowy Winyl" style="width: 350px; height: 350px;">
                 <div class="cena">
                     <p>Cena: 149.99 PLN</p>
@@ -104,9 +104,9 @@
     // Funkcja dodawania do koszyka
     function dodajDoKoszyka(index) {
         const produkty = [
-            { name: "Nowa Płyta", price: 19.99 },
-            { name: "Nowy Instrument", price: 1999.99 },
-            { name: "Nowy Winyl", price: 149.99 }
+            { name: "Lady Gaga & Bruno Mars - Die with a smile CD", price: 19.99 },
+            { name: "Gitara akustyczna - Dowina Rioja D", price: 1999.99 },
+            { name: "Billie Eilish - Hit Me Hard and Soft Vinyl", price: 149.99 }
         ];
 
         const produkt = produkty[index];
