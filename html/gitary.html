@@ -12,7 +12,7 @@
     <a href="../main.html"><div id="logo">
    <img src="../img/logo.png" alt="logo" id="obrazeklogo"></a>
         <p>SKLEP MUZYCZNY</p></div>
-    <div id="reklama">NOWY ALBUM</div>
+    <div id="reklama"><img src="../img/reklama.png"></div>
     <div id="koszyk" onclick="pokazKoszyk()">
         
         <img src="../img/koszyk.png" alt="Koszyk">
@@ -43,16 +43,12 @@
     </div>
     <div id="main">
         <div id="środkowy-content">
-        <div id="najbardziej-sprzedawany">
-            <h2>Najbardziej sprzedawany instrument</h2>
-            <a href="html/gitary.html"><img src="img/instrument.png" alt="Najbardziej sprzedawany instrument" id="najbardziej-img" style="width: auto; height: auto;"></a>
-        </div>
         <div id="produkty">
             <div class="produkt">
-                <h3>Lady Gaga & Bruno Mars - Die with a smile CD</h3>
-                <img src="img/nowa_plyta.png" alt="Nowa Płyta" style="width: 350px; height: 320px; margin-top: 30px;">
+                <h3>Gitara akustyczna - MUSICMATE BK-38 Czarny</h3>
+                <img src="../img/musicmate.png" alt="gitara" style="width: 350px; height: 320px; margin-top: 30px;">
                 <div class="cena">
-                    <p>Cena: 19.99 PLN</p>
+                    <p>Cena: 349.99 PLN</p>
                     <div class="koszyk">
                         <button>Dodaj do koszyka</button>
                     </div>
@@ -60,7 +56,7 @@
             </div>
             <div class="produkt">
                 <h3>Gitara akustyczna - Dowina Rioja D</h3>
-                <img src="img/nowy_instrument.png" alt="Nowy Instrument" style="width: 350px; height: 350px;">
+                <img src="../img/nowy_instrument.png" alt="Nowy Instrument" style="width: 350px; height: 350px;">
                 <div class="cena">
                     <p>Cena: 1999.99 PLN</p>
                     <div class="koszyk">
@@ -69,10 +65,10 @@
                 </div>
             </div>
             <div class="produkt">
-                <h3>Billie Eilish - Hit Me Hard and Soft Vinyl</h3>
-                <img src="img/nowy_vinyl.png" alt="Nowy Winyl" style="width: 350px; height: 350px;">
+                <h3>Gitara akustyczna - VGS Basic 4/4 Black</h3>
+                <img src="../img/vgsbasic.png" alt="Nowy Winyl" style="width: 350px; height: 350px;">
                 <div class="cena">
-                    <p>Cena: 149.99 PLN</p>
+                    <p>Cena: 329.00 PLN</p>
                     <div class="koszyk">
                         <button>Dodaj do koszyka</button>
                     </div>
@@ -104,9 +100,9 @@
     // Funkcja dodawania do koszyka
     function dodajDoKoszyka(index) {
         const produkty = [
-            { name: "Lady Gaga & Bruno Mars - Die with a smile CD", price: 19.99 },
+            { name: "Gitara akustyczna - MUSICMATE BK-38 Czarny", price: 349.99 },
             { name: "Gitara akustyczna - Dowina Rioja D", price: 1999.99 },
-            { name: "Billie Eilish - Hit Me Hard and Soft Vinyl", price: 149.99 }
+            { name: "Gitara akustyczna - VGS Basic 4/4 Black", price: 329.00 }
         ];
 
         const produkt = produkty[index];

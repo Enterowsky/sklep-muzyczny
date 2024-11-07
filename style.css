@@ -27,7 +27,7 @@ html, body {
 }
 #reklama {
     height: 160px;
-    width: 60%;
+    width: 1152px;
    
     float: left;
 }
@@ -39,8 +39,8 @@ html, body {
 }
 #środek {
     width: 100%;
-    float: left;
     display: flex;
+    height: auto;
 }
 #lewa {
 width: 15%;
