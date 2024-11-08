@@ -46,30 +46,30 @@
       
         <div id="produkty">
             <div class="produkt">
-                <h3>Lady Gaga & Bruno Mars - Die with a smile CD</h3>
-                <img src="img/nowa_plyta.png" alt="Nowa Płyta" style="width: 350px; height: 320px; margin-top: 30px;">
+                <h3>Perkusja Pearl EXX705NBR/C Export Bl. Cherry</h3>
+                <img src="../img/pearl.png" alt="Nowa Płyta" style="width: 350px; height: 320px; margin-top: 30px;">
                 <div class="cena">
-                    <p>Cena: 19.99 PLN</p>
+                    <p>Cena: 4699.00 PLN</p>
                     <div class="koszyk">
                         <button>Dodaj do koszyka</button>
                     </div>
                 </div>
             </div>
             <div class="produkt">
-                <h3>Gitara akustyczna - Dowina Rioja D</h3>
-                <img src="img/nowy_instrument.png" alt="Nowy Instrument" style="width: 350px; height: 350px;">
+                <h3>Bęben Ludwig Black Beauty LB417 14x6,5</h3>
+                <img src="../img/beben.png" alt="Nowy Instrument" style="width: 350px; height: 350px;">
                 <div class="cena">
-                    <p>Cena: 1999.99 PLN</p>
+                    <p>Cena: 5199.00 PLN</p>
                     <div class="koszyk">
                         <button>Dodaj do koszyka</button>
                     </div>
                 </div>
             </div>
             <div class="produkt">
-                <h3>Billie Eilish - Hit Me Hard and Soft Vinyl</h3>
-                <img src="img/nowy_vinyl.png" alt="Nowy Winyl" style="width: 350px; height: 350px;">
+                <h3>Perkusja Gretsch Renown Maple 22 Kolor: GN</h3>
+                <img src="../img/gretsch.png" alt="Nowy Winyl" style="width: 350px; height: 350px;">
                 <div class="cena">
-                    <p>Cena: 149.99 PLN</p>
+                    <p>Cena: 9199.00 PLN</p>
                     <div class="koszyk">
                         <button>Dodaj do koszyka</button>
                     </div>
@@ -80,9 +80,18 @@
 </div>
 </div>
 <div id="dół">
-    <div id="footer"><p>Skontaktuj się z nami!</p></div>
+    <div id="footer"><p>Skontaktuj się z nami!</p>
+        <button onclick="toggleDarkMode()">Przełącz tryb ciemny</button></div>
 </div>
 <script>
+     function toggleDarkMode() {
+      const main = document.getElementById('main');
+      
+      // Przełącz tryb ciemny lub jasny tylko dla #main
+      main.classList.toggle('dark-mode');
+      main.classList.toggle('light-mode');
+    }
+
     // Inicjalizacja zmiennych
     let koszyk = JSON.parse(localStorage.getItem('koszyk')) || [];
     let suma = parseFloat(localStorage.getItem('suma')) || 0;
@@ -101,9 +110,9 @@
     // Funkcja dodawania do koszyka
     function dodajDoKoszyka(index) {
         const produkty = [
-            { name: "Lady Gaga & Bruno Mars - Die with a smile CD", price: 19.99 },
-            { name: "Gitara akustyczna - Dowina Rioja D", price: 1999.99 },
-            { name: "Billie Eilish - Hit Me Hard and Soft Vinyl", price: 149.99 }
+            { name: "Perkusja Pearl EXX705NBR/C Export Bl. Cherry", price: 4699.00 },
+            { name: "Bęben Ludwig Black Beauty LB417 14x6,5", price: 5199.00 },
+            { name: "Perkusja Gretsch Renown Maple 22 Kolor: GN", price: 9199.00 }
         ];
 
         const produkt = produkty[index];

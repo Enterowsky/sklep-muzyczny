@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Podsumowanie Zamówienia</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style1.css">
 </head>
 <body>
     <div id="podsumowanie-koszyka">
@@ -22,16 +22,15 @@
             <input type="tel" id="telefon" name="telefon" required><br>
 
             <label for="adres">Adres dostawy:</label>
-            <textarea id="adres" name="adres" rows="3" required></textarea>
+            <textarea id="adres" name="adres" rows="3" required></textarea><br>
 
             <!-- Dane koszyka przesyłane jako ukryte pola -->
             <input type="hidden" name="produkty" id="produkty-json">
 
-            <button type="submit">Finalizuj zamówienie</button>
+            <div><button type="submit">Finalizuj zamówienie</button></div>
         </form>
         <a href="../main.html" id="powrot-do-sklepu">Powrót do sklepu</a>
     </div>
-
 
     <script>
         // Pobranie danych koszyka z LocalStorage i wstawienie ich do ukrytego pola

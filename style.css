@@ -9,6 +9,7 @@ html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
 }
 #góra {
     width: 100%;
@@ -261,7 +262,7 @@ float: left;
     margin-top: 20px;
 }
 
-button {
+#czysc button {
     display: block;
     margin: 20px auto;
     padding: 10px 20px;
@@ -273,7 +274,7 @@ button {
     border-radius: 5px;
 }
 
-button:hover {
+#czysc button:hover {
     background-color: darkgreen;
 }
 
@@ -288,3 +289,29 @@ button:hover {
 #powrot-do-sklepu:hover {
     text-decoration: underline;
 }
+
+#footer button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  #footer button:hover {
+    background-color: #0056b3;
+  }
+  #main {
+    transition: background-color 0.3s, color 0.3s;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  .light-mode {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  .dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }

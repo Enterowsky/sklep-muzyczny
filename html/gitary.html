@@ -79,9 +79,18 @@
 </div>
 </div>
 <div id="dół">
-    <div id="footer"><p>Skontaktuj się z nami!</p></div>
+    <div id="footer"><p>Skontaktuj się z nami!</p>
+        <button onclick="toggleDarkMode()">Przełącz tryb ciemny</button></div>
 </div>
 <script>
+     function toggleDarkMode() {
+      const main = document.getElementById('main');
+      
+      // Przełącz tryb ciemny lub jasny tylko dla #main
+      main.classList.toggle('dark-mode');
+      main.classList.toggle('light-mode');
+    }
+
     // Inicjalizacja zmiennych
     let koszyk = JSON.parse(localStorage.getItem('koszyk')) || [];
     let suma = parseFloat(localStorage.getItem('suma')) || 0;

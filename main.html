@@ -25,7 +25,7 @@
             <h3>Koszyk</h3>
             <ul id="lista-produktow"></ul>
             <p id="suma">Suma: 0 PLN</p>
-            <button onclick="wyczyscKoszyk()">Wyczyść koszyk</button>
+            <div id="czysc"><button onclick="wyczyscKoszyk()">Wyczyść koszyk</button></div>
             <a href="html/podsumowanie.html" class="zobacz-koszyk">Podsumowanie</a>
 
         </div>
@@ -41,7 +41,7 @@
         <a href="html/Winyle.html">Winyle</a>
         <a href="html/Plyty_cd.html">Płyty CD</a>
     </div>
-    <div id="main">
+    <div id="main" class="light-mode">
         <div id="środkowy-content">
         <div id="najbardziej-sprzedawany">
             <h2>Sprawdź najnowsze gitary</h2>
@@ -84,9 +84,23 @@
 </div>
 </div>
 <div id="dół">
-    <div id="footer"><p>Skontaktuj się z nami!</p></div>
+    <div id="footer">
+        <p>Skontaktuj się z nami!</p>
+        <button onclick="toggleDarkMode()">Przełącz tryb ciemny</button>
+    </div>
+    
 </div>
+
 <script>
+ function toggleDarkMode() {
+      const main = document.getElementById('main');
+      
+      // Przełącz tryb ciemny lub jasny tylko dla #main
+      main.classList.toggle('dark-mode');
+      main.classList.toggle('light-mode');
+    }
+
+
     // Inicjalizacja zmiennych
     let koszyk = JSON.parse(localStorage.getItem('koszyk')) || [];
     let suma = parseFloat(localStorage.getItem('suma')) || 0;
@@ -190,6 +204,8 @@
             panelKoszyka.classList.add('open');
         }
     }
+
+
 </script>
 
 </body>
